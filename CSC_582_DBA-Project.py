@@ -26,7 +26,6 @@ def create_table():
                 balance INT
             )
         """)
-        connection.commit()
         #print("Table Accounts created successfully !!")
     except oracledb.DatabaseError as e:
         error = e.args[0]
