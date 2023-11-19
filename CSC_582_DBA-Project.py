@@ -30,10 +30,9 @@ def create_table():
     except oracledb.DatabaseError as e:
         error = e.args[0]
         if error.code ==955:
+           create_Account()
           #print("Accounts table already exists !!")
           
-          
-
 #Account Creation
 def create_Account():
     name = input("Enter accountholder's name: ")
