@@ -26,14 +26,11 @@ def create_table():
                 balance INT
             )
         """)
-        connection.commit()
-        create_Account()
         #print("Table Accounts created successfully !!")
     except oracledb.DatabaseError as e:
         error = e.args[0]
         if error.code ==955:
           #print("Accounts table already exists !!")
-          create_Account()
           
           
 
@@ -102,6 +99,7 @@ while (choose!=5):
             case 1:
                 print("You choose to create account...\n")
                 create_table()
+                create_Account()
             case 2:
                 print("You choose to check Balance...\n")
                 check_Balance()
